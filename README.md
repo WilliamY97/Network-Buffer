@@ -1,4 +1,4 @@
-# Queue Simulation
+# Network Buffer Simulation
 
 A tool built for the simulation of a network buffer for packet ingestion
 
