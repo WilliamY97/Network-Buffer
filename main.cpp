@@ -302,7 +302,7 @@ int main()
 	int seed = std::chrono::system_clock::now().time_since_epoch().count();
 	srand(seed);
 	Question1(1000, 75);
-    simulationData result = run_simulation(1000000, 0.25, 12000, 1, -1);
+    	simulationData result = run_simulation(1000000, 0.25, 12000, 1, -1);
 	evaluateMetrics(result);
 	outputMetrics(result);
 }
