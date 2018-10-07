@@ -4,10 +4,11 @@ float U() {
     return ((float)rand()/(float)(RAND_MAX));
 }
 
-float expf(const float L) {
-    float res;
-    res = (float)((-1.0 / L) * log(1.0 - U()));
-    return res;
+float expo(const float lambda)
+{
+    float exp_value;
+    exp_value = (float)((-1.0 / lambda) * log(1.0 - U()));
+    return exp_value;
 }
 
 void Question1(int iterations, float L) {
@@ -15,10 +16,10 @@ void Question1(int iterations, float L) {
     float sum = 0;
     float mean, variance;
     float A[iterations];
-    double expVariance, diffVariance;        
+    double expVariance, diffVariance;
 
     for (int i = 0; i < iterations; i++) {
-        e = expf(L);
+        e = expo(L);
         sum += e;
         A[i] = e;
     }
@@ -33,10 +34,11 @@ void Question1(int iterations, float L) {
     expVariance = (1.0)/pow(L, 2);
     diffVariance = fabs(((sum / (iterations - 1))-expVariance)/((expVariance)))*100;
 
-    printf("<< Question 1 >>\n");
-    printf(" Raw Mean: %f \n Expected Mean: %f \
-    	\n Mean Difference: %f %% \n Raw Variance: %f \
-    	\n Expected Variance: %f \n Variance Difference: %f %%\n", \
-    	mean, (1.0)/L, fabs((mean-(1.0)/L)/(((1.0)/L)))*100, sum / (iterations - 1), expVariance, diffVariance);
+    printf("\n<< QUESTION 1 START>>\n");
+    printf("\nRaw Mean: %f \nExpected Mean: %f \
+        \nMean Difference: %f %% \nRaw Variance: %f \
+        \nExpected Variance: %f \nVariance Difference: %f %%\n", \
+        mean, (1.0)/L, fabs((mean-(1.0)/L)/(((1.0)/L)))*100, sum / (iterations - 1), expVariance, diffVariance);
+    printf("\n<< QUESTION 1 END>>\n");
     return;
 }

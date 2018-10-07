@@ -9,7 +9,6 @@
 #include <cmath>
 
 float U();
-float expf(const float L);
+float expo(const float lambda);
 void Question1(int iterations, float L);
-
 #endif // RANDOM_H_INCLUDED
